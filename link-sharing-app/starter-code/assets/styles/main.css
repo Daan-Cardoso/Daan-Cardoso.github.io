@@ -1,0 +1,83 @@
+/* design system */
+
+@font-face {
+  font-family: 'Instrumental Sans';
+  src: url('../fonts/static/InstrumentSans-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Instrumental Sans';
+  src: url('../fonts/static/InstrumentSans-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Instrumental Sans';
+  src: url('../fonts/static/InstrumentSans-SemiBold.ttf');
+  font-weight: 600;
+}
+
+:root {
+  /* colors */
+  --purple: #633CFF;
+  --purple-hover: #BEADFF;
+  --purple-light: #EFEBFF;
+  --dark-grey: #333333;
+  --grey: #737373;
+  --light-grey: #FAFAFA;
+  ---white: #FFFFFF;
+  --red: #FF3939;
+  --borders: #D9D9D9;
+
+  /* typography */
+  --heading-m: bold 2rem/2.5rem 'Instrumental Sans', sans-serif;
+  --heading-s: 600 1rem/1.5rem 'Instrumental Sans', sans-serif;
+  --body-m: normal 1rem/1.5rem 'Instrumental Sans', sans-serif;
+  --body-s: normal .75rem/1.5rem 'Instrumental Sans', sans-serif;
+}
+
+.button, .button--secondary {
+  font: var(--heading-s);
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 227px;
+  padding: 11px 27px;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.button:disabled, .button--secondary:disabled {
+  cursor: unset;
+}
+
+.button {
+  background: var(--purple);
+  color: var(---white);
+}
+
+.button:hover, .button:active {
+  background: var(--purple-hover);
+  box-shadow:  0px 0px 32px 0px rgba(var(--purple-hover), 0.1);
+}
+
+.button:disabled {
+  background: var(--purple-light);
+}
+
+.button--secondary, .button--secondary:disabled {
+  background: transparent;
+  color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.button--secondary:hover, .button--secondary:active {
+  background: var(--purple-light);
+}
+
+.button--secondary:disabled {
+  opacity: 0.25;
+}
