@@ -1,0 +1,22 @@
+@import '../../assets/general/scss/main.scss';
+
+.button {
+  @include typo(m-heading, white);
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 2.29px;
+  padding: 0;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid $primary;
+  max-width: 144px;
+  max-height: 38px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($white, .2);
+  }
+}

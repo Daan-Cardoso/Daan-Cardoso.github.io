@@ -1,8 +1,12 @@
-import './App.css'
+import './App.scss'
+import Presentation from '../Layout/Presentation'
+import Container from '../components/Container'
 
 const App = () => {
   return (
-    <h1>create project</h1>
+    <Container>
+      <Presentation />
+    </Container>
   )
 }
 

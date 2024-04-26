@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Space Grotesk Bold';
+  src: url('../fonts/static/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Grotesk Medium';
+  src: url('../fonts/static/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-style: normal;
+}
+
+$typo-map: (
+  xl-heading: ( font: 700 5.5rem/1 'Space Grotesk Bold', letter-spacing: -2.5px ),
+  l-heading: ( font: 700 3rem/1 'Space Grotesk Bold', letter-spacing: -1.5px ),
+  m-heading: ( font: 700 1.5rem/2rem 'Space Grotesk Bold', letter-spacing: -0.33px ),
+  body: ( font: 400 18px/28px 'Space Grotesk Medium', letter-spacing: 0 )
+);

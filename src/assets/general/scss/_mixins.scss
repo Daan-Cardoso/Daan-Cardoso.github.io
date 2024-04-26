@@ -1,0 +1,42 @@
+@import 'colors';
+@import 'typo';
+
+@mixin typo($type: body, $color: black) {
+  $selected-type: map-get($typo-map, $type);
+
+  @include color($color);
+
+  font: map-get($selected-type, font);
+
+  @if map-has-key($selected-type, 'letter-spacing') {
+    letter-spacing: map-get($selected-type, letter-spacing);
+  }
+}
+
+@mixin color($color: black) {
+  $selected-color: map-get($colors-map, $color);
+
+  @if $selected-color {
+    color: $selected-color;
+  } @else {
+    color: map-get($colors-map, black);
+  }
+}
+
+@mixin Mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin Tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin Desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}

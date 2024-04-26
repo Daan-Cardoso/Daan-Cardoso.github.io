@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './assets/general/styles/reset.css'
+import './assets/general/scss/reset.scss'
 
 import App from './view/App'
 

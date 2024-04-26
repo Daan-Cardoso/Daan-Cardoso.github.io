@@ -1,0 +1,21 @@
+@import '../../assets/general/scss/main.scss';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  
+  @include Mobile {
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  > .fake-logo { @include typo(m-heading, white); }
+
+  > .list {
+    display: flex;
+    gap: 25px;
+
+    > .item  > .link  > .logo { width: 24px; }
+  }
+}

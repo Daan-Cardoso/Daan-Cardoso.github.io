@@ -1,0 +1,11 @@
+@import '../../assets/general/scss/main.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  @include Mobile {
+    gap: 40px;
+    padding: 20px 16px;
+  }
+}
