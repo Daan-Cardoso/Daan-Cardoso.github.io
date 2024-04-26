@@ -4,28 +4,63 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
-  > .title {
-    @include typo(m-heading, white);
-    text-align: center;
+  > .resume {
+    display: flex;
+    flex-direction: column;
 
-    @include Mobile {
-      letter-spacing: -1.14px;
+    > .title {
+      @include typo(m-heading, white);
+      text-align: center;
+  
+      @include Mobile {
+        letter-spacing: -1.14px;
+      }
+
+      @include Tablet {
+        text-align: left;
+        font-size: 54px;
+        line-height: 62px;
+        letter-spacing: -2.05px;
+        width: 75%;
+      }
+
+      @include Desktop {
+        @include typo(xl-heading, white);
+        width: 80%;
+      }
+  
+      > .highlight {
+        border-bottom: 4px solid $primary;
+      }
+    }
+  
+    > .description {
+      @include typo(body, grey);
+      text-align: center;
+  
+      @include Mobile {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0;
+      }
+
+      @include Tablet {
+        text-align: left;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0;
+        width: 59%;
+      }
     }
 
-    > .highlight {
-      border-bottom: 4px solid $primary;
+    @include Tablet {
+      gap: 40px;
     }
-  }
 
-  > .description {
-    @include typo(body, grey);
-    text-align: center;
-
-    @include Mobile {
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: 0;
+    @include Desktop {
+      padding-bottom: 158px;
     }
   }
 
@@ -49,9 +84,27 @@
         transform: translateX(-25%);
       }
     }
+
+    @include Tablet {
+      max-width: 322px;
+      position: absolute;
+      top: 0;
+      right: -32px;
+      padding-top: 133px;      
+    }
+
+    @include Desktop {
+      max-width: 445px;
+      padding-top: 133px;
+    }
   }
 
   @include Mobile {
     gap: 24px;
+  }
+
+  @include Tablet {
+    display: grid;
+    gap: 90px;
   }
 }

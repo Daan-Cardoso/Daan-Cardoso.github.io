@@ -3,9 +3,22 @@
 .container {
   display: flex;
   flex-direction: column;
-  
+  margin: 0 auto;
+
   @include Mobile {
     gap: 40px;
     padding: 20px 16px;
+  }
+
+  @include Tablet {
+    max-width: 768px;
+    gap: 40px;
+    padding: 30px 32px;
+  }
+
+  @include Desktop {
+    max-width: 1440px;
+    gap: 40px;
+    padding: 40px 165px;
   }
 }

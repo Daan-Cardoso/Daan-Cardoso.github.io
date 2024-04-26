@@ -26,13 +26,15 @@ const Presentation = () => {
         <img src="/avatar.png" alt="Imagem de um avatar 3d" />
       </figure>
 
-      <Title title={Data.title} />
+      <article className="resume">
+        <Title title={Data.title} />
 
-      <p className='description'>
-        { Data.description }
-      </p>
+        <p className='description'>
+          { Data.description }
+        </p>
 
-      <Button label={Data.action.label} action={Data.action.callback} />
+        <Button label={Data.action.label} action={Data.action.callback} />
+      </article>
     </section>
   )
 }
