@@ -93,6 +93,15 @@ export const Skills = [
     ]
   },
   {
+    title: 'Git',
+    text: '4 anos de experiência, costumo utilizar o Git Flow.',
+    topics: [
+      'commits semânticos',
+      'pull requests',
+      'code review',
+    ]
+  },
+  {
     title: 'Conhecimentos Diversos',
     text: 'Estou aprimorando alguns desses tópicos e por isso não foram destacados.',
     topics: [
