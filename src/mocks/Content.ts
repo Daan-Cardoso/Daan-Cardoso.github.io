@@ -30,7 +30,7 @@ export interface iPresentation {
 
 export const Presentation = {
   logo: 'DaniloCardoso',
-  title: 'Boa tarde, me chamo {highlight}.', 
+  title: '{greetings}, me chamo {highlight}.', 
   highlight: 'Danilo Cardoso',
   description: 'Um paulistano apaixonado por tecnologia, gastronomia, nerdices e cachorros. Desenvolvedor front-end especializado em Vue, com habilidades em React e disposto a estudar o que for necessário para desenvolver minhas habilidades.',
   action: {

@@ -3,8 +3,19 @@ import Button from '../../components/Button'
 import { Presentation as Data } from '../../mocks/Content'
 import './style.scss'
 
+const getGreeting = () => {
+  const hour = new Date().getHours()
+  const morning = hour >= 6 && hour <= 12
+  const afternoon = hour >= 12 && hour <= 18
+
+  if (morning) return 'Bom dia'
+  if (afternoon) return 'Boa tarde'
+
+  return 'Boa noite'
+}
+
 const Title = ({ title }: { title: string }) => {
-  const greetings = 'Olá'
+  const greetings = getGreeting()
 
   const highlight = `<span class="highlight">${Data.highlight}</span>`
 
