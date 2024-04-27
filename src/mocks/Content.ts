@@ -39,9 +39,67 @@ export const Presentation = {
   }
 }
 
+export interface iSkills {
+  title: string;
+  text: string;
+  topics: string[];
+}
+
 export const Skills = [
   {
-    titlte: 'Front-end',
-    text: 'React, Vue, Angular'
+    title: 'Vue',
+    text: '4 anos de experiência, desde a versão 2.5 até a 3.0.',
+    topics: [
+      'Nuxt',
+      'Vuex',
+      'Vue Router',
+      'Pinia',
+      'Vite',
+      'Vue CLI',
+      'Vue CDN',
+      'Vuetify',
+      'Bootstrap Vue'
+    ]
+  },
+  {
+    title: 'React',
+    text: '2 anos de experiência, transpuz o conhecimento de Vue, já que ambos se utilizam de virtual DOM e componentes.',
+    topics: [
+      'React Router',
+      'Styled-components',
+      'Custom Hooks',
+      'Context',
+      'Redux',
+    ]
+  },
+  {
+    title: 'Consumo de API`s',
+    text: '4 anos de experiência, utilizando diversos métodos.',
+    topics: [
+      'Axios',
+      'Fetch',
+      'Apollo Client(GraphQl)',
+      'AJAX',
+    ]
+  },
+  {
+    title: 'Sass',
+    text: '4 anos de experiência, particularmente gosto muito de escrever CSS e o Sass me traz muito mais recursos para isso.',
+    topics: [
+      'Variáveis',
+      'Mixins',
+      'Functions',
+      'Maps',
+    ]
+  },
+  {
+    title: 'Conhecimentos Diversos',
+    text: 'Estou aprimorando alguns desses tópicos e por isso não foram destacados.',
+    topics: [
+      'Cypress',
+      'Storybook',
+      'Docker',
+      'Python',
+    ]
   }
 ]

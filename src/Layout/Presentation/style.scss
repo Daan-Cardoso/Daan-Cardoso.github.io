@@ -55,12 +55,17 @@
       }
     }
 
+    @include Mobile { 
+      align-items: center;
+      gap: 24px;
+    }
+
     @include Tablet {
       gap: 40px;
     }
 
     @include Desktop {
-      padding-bottom: 158px;
+      padding-bottom: 186px;
     }
   }
 
@@ -96,6 +101,7 @@
     @include Desktop {
       max-width: 445px;
       padding-top: 133px;
+      right: 0;
     }
   }
 

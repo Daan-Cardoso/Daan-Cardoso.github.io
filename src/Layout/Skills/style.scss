@@ -1,0 +1,69 @@
+@import '../../assets/general/scss/main.scss';
+
+.skills {
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey;
+  padding: 40px 0;
+
+  @include Desktop {
+    margin: 64px 0 60px;
+  }
+
+  > .list {
+    display: flex;
+    
+    @include Mobile {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @include Tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    > .item > .card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      > .title {
+        @include typo(m-heading, white);
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: -1px;
+
+        @include Tablet {
+          @include typo(l-heading, white)
+        }
+      }
+
+      > .resume {
+        @include typo(body, grey);
+
+        @include Mobile {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0;
+        }
+      }
+
+      > .topics {
+        @include typo(body, grey);
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        @include Tablet {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+}
