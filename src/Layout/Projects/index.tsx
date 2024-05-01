@@ -1,44 +1,48 @@
 
 import './styles.scss'
 
-const Card = () => {
+const Card = ({ name, imageUrl, languages, url }) => {
   return (
-    <article className="">
-      <picture className="">
+    <article className="card">
+      <picture className="cover">
         <img
-          src="./assets/images/thumbnail-project-1-small.webp"
+          src={imageUrl}
           alt="Design portfolio"
         />
       </picture>
-      <div className="">
-        <h3 className="">Design portfolio</h3>
+      <div className="body">
+        <h3 className="name">{ name }</h3>
 
-        <ul className="">
-          <li>
-            <p className="">HTML</p>
-          </li>
-          <li>
-            <p className="">CSS</p>
-          </li>
+        <ul className="languages">
+          {
+            languages.length && languages.map((l) => (
+            <li key={ name + l }>
+              <p className="item">{ l }</p>
+            </li>
+            )) 
+          }
         </ul>
       </div>
 
-      <footer className="__actions">
-        <a href="#" className="button">View project</a>
-        <a href="#" className="button">View code</a>
+      <footer className="actions">
+        <a href="#" target="_blank" className="button">View project</a>
+        <a href={ url } target="_blank" className="button">View code</a>
       </footer>
     </article>
   )
 }
 
-const Projects = ({ projects } : { projects: string[] }) => {
+const Projects = ({ projects }) => {
   return (
-    <section>
-      <ul>
-        <li>
-          <Card />
-          { projects }
-        </li>
+    <section className="projects">
+      <ul className="list">
+        {
+        projects && projects.map((repo) => (
+          <li className="item" key={repo.name}>
+            <Card { ...repo } />
+          </li>
+        ))
+      }
       </ul>
     </section>
   )
