@@ -8,12 +8,12 @@ export const NavLinks: iNavLinks[] = [
   {
     icon: '/icon/icon-github.svg',
     alt: 'github logo',
-    link: '#github'
+    link: 'https://github.com/Daan-Cardoso'
   },
   {
     icon: '/icon/icon-linkedin.svg',
     alt: 'linkedin logo',
-    link: '#linkedin'
+    link: 'https://www.linkedin.com/in/daan-cardoso/'
   },
 ]
 

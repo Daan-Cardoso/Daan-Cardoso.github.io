@@ -3,7 +3,7 @@ import './style.scss'
 
 const Links = NavLinks.map(({ link, alt, icon }: iNavLinks) => (
   <li key={link} className='item'>
-    <a href={ link } className='link'>
+    <a target='_blank' href={ link } className='link'>
       <img src={icon} alt={alt} className='logo' />
     </a>
   </li>

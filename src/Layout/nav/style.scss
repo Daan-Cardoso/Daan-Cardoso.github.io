@@ -3,6 +3,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  z-index: 2;
   
   @include Mobile {
     gap: 24px;
@@ -16,6 +17,10 @@
     display: flex;
     gap: 25px;
 
-    > .item  > .link  > .logo { width: 24px; }
+    > .item  > .link {
+      cursor: pointer;
+
+      > .logo { width: 24px; }
+    }
   }
 }
