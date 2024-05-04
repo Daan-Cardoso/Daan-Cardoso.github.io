@@ -33,7 +33,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14" # Defina a versão do Node.js que você está usando para construir
+          node-version: "18" # Defina a versão do Node.js que você está usando para construir
       - name: Install dependencies
         run: yarn install # ou npm install, dependendo do seu gerenciador de pacotes
       - name: Build
