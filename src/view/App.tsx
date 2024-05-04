@@ -4,22 +4,23 @@ import Presentation from '../Layout/Presentation'
 import Skills from '../Layout/Skills'
 import Projects from '../Layout/Projects'
 import Container from '../components/Container'
+import repo from '../interfaces/repo'
 import './App.scss'
 
 const user = 'Daan-Cardoso'
 
 const App = () => {
-  const [repos, setRepos] = useState([])
+  const [repos, setRepos] = useState<repo[]>([])
 
   useEffect(() => {
     const fetchProjects = async () => {
       await axios.get(`https://api.github.com/users/${user}/repos`)
         .then(async ({ data }) => {
-          const portfolioRepos = data.filter((item) => item.description && item.description.includes('[portfolio]'))
+          const portfolioRepos = data.filter((item: { description: string}) => item.description && item.description.includes('[portfolio]'))
 
           try {
-            const reposWithDetails = await Promise.all(portfolioRepos.map(async (repo) => {
-              const languages = await axios.get(repo.languages_url).then((r) => Object.keys(r.data))
+            const reposWithDetails: repo[] = await Promise.all(portfolioRepos.map(async (repo : repo) => {
+              const languages = await axios.get(repo.languages_url || '').then((r) => Object.keys(r.data))
               const imageUrl = `https://raw.githubusercontent.com/${user}/${repo.name}/master/cover.webp`
               return {
                 name: repo.name,
@@ -29,9 +30,7 @@ const App = () => {
               }
             }))
   
-            setRepos(reposWithDetails)
-  
-            console.log(reposWithDetails)
+            setRepos(reposWithDetails)  
           } catch (error) {
             console.log(error)
           }

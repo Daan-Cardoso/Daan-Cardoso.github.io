@@ -1,12 +1,6 @@
 
 import './styles.scss'
-
-interface repo {
-  name: string,
-  imageUrl: string,
-  languages: string[],
-  url: string
-}
+import repo from '../../interfaces/repo'
 
 const Card = ({ name, imageUrl, languages, url }: repo) => {
   return (
@@ -22,7 +16,7 @@ const Card = ({ name, imageUrl, languages, url }: repo) => {
 
         <ul className="languages">
           {
-            languages.length && languages.map((l) => (
+            languages?.length && languages?.map((l) => (
             <li className="item" key={ name + l }>
               { l }
             </li>
