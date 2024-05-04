@@ -1,28 +1,22 @@
-# Workflow para implantar conteúdo estático no GitHub Pages
 name: Deploy static content to Pages
 
 on:
-  # Executa quando há push na branch padrão
   push:
     branches: ["master"]
 
-  # Permite executar este fluxo de trabalho manualmente a partir da guia Actions
   workflow_dispatch:
 
-# Define permissões do GITHUB_TOKEN para permitir implantação no GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite apenas uma implantação simultânea, ignorando execuções enfileiradas entre a execução em andamento e a mais recente na fila.
-# No entanto, NÃO cancele execuções em andamento, pois queremos permitir que essas implantações de produção sejam concluídas.
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Job único para implantação, pois estamos apenas implantando
   deploy:
     environment:
       name: github-pages
@@ -33,11 +27,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies and build
         run: |
-          npm install  # ou o comando que você usa para instalar dependências
-          npm run build  # ou o comando que você usa para construir o projeto
+          yarn install
+          yarn build
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          folder: dist  # Define a pasta a ser implantada
+          branch: master
+          folder: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
