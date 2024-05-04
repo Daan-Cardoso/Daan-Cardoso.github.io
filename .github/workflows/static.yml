@@ -1,27 +1,28 @@
+# Workflow para implantar conteúdo estático no GitHub Pages
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Executa quando há push na branch padrão
   push:
     branches: ["master"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Permite executar este fluxo de trabalho manualmente a partir da guia Actions
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Define permissões do GITHUB_TOKEN para permitir implantação no GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Permite apenas uma implantação simultânea, ignorando execuções enfileiradas entre a execução em andamento e a mais recente na fila.
+# No entanto, NÃO cancele execuções em andamento, pois queremos permitir que essas implantações de produção sejam concluídas.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Job único para implantação, pois estamos apenas implantando
   deploy:
     environment:
       name: github-pages
@@ -30,17 +31,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18" # Defina a versão do Node.js que você está usando para construir
-      - name: Install dependencies
-        run: yarn install # ou npm install, dependendo do seu gerenciador de pacotes
-      - name: Build
-        run: yarn build # ou o comando necessário para construir seus arquivos de destino
+      - name: Install dependencies and build
+        run: |
+          npm install  # ou o comando que você usa para instalar dependências
+          npm run build  # ou o comando que você usa para construir o projeto
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          source: dist # Define a pasta onde estão os arquivos de construção (dist)
+          folder: dist  # Define a pasta a ser implantada
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
