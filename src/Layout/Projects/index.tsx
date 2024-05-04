@@ -1,7 +1,14 @@
 
 import './styles.scss'
 
-const Card = ({ name, imageUrl, languages, url }) => {
+interface repo {
+  name: string,
+  imageUrl: string,
+  languages: string[],
+  url: string
+}
+
+const Card = ({ name, imageUrl, languages, url }: repo) => {
   return (
     <article className="card">
       <picture className="cover">
@@ -16,8 +23,8 @@ const Card = ({ name, imageUrl, languages, url }) => {
         <ul className="languages">
           {
             languages.length && languages.map((l) => (
-            <li key={ name + l }>
-              <p className="item">{ l }</p>
+            <li className="item" key={ name + l }>
+              { l }
             </li>
             )) 
           }
@@ -32,9 +39,9 @@ const Card = ({ name, imageUrl, languages, url }) => {
   )
 }
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects } : { projects: repo[] }) => {
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <ul className="list">
         {
         projects && projects.map((repo) => (
@@ -44,6 +51,15 @@ const Projects = ({ projects }) => {
         ))
       }
       </ul>
+      { 
+        !projects && (
+        <div className='empty'>
+          <picture className='icon'>
+            <img src="/empty.png" alt="imagem abstrata que remete a construção do site" />
+          </picture>
+          <p className='text'>Ops! Estou reformulando meu portfólio, então estou sem projetos nessa seção</p>
+        </div>
+      )}
     </section>
   )
 }

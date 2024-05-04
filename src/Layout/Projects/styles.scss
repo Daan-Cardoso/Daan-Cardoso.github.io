@@ -14,6 +14,25 @@
     gap: 80px;
   }
 
+  > .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    > .icon {
+      > img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(318deg) brightness(105%) contrast(102%);
+      }
+    }
+
+    > .text {
+      color: white;
+      line-height: 2rem;
+      font-size: 2rem;
+      font-family: sans-serif;
+    }
+  }
+
   > .list {
     display: flex;
     flex-direction: column;
@@ -62,18 +81,19 @@
           @include typo(m-heading, white);
           text-transform: uppercase;
         }
-      }
-      
-      > .languages {
-        display: flex;
-        gap: 18px;
-        
-        > li {
-          @include typo(body, grey);
-          text-transform: uppercase;
-          display: inline-block;
+
+        > .languages {
+          display: flex;
+          gap: 18px;
+          
+          > .item {
+            @include typo(body, grey);
+            text-transform: uppercase;
+            display: inline-block;
+          }
         }
       }
+      
       
       > .actions {
         display: flex;
@@ -95,7 +115,6 @@
           
           &:hover {
             opacity: 1;
-            
           }
         }
       }

@@ -44,7 +44,7 @@ const Presentation = () => {
           { Data.description }
         </p>
 
-        <Button label={Data.action.label} action={Data.action.callback} />
+        <Button label={Data.action.label} action={() => Data.action.callback("#projects")} />
       </article>
     </section>
   )

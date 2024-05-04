@@ -34,8 +34,8 @@ export const Presentation = {
   highlight: 'Danilo Cardoso',
   description: 'Um paulistano apaixonado por tecnologia, gastronomia, nerdices e cachorros. Desenvolvedor front-end especializado em Vue, com habilidades em React e disposto a estudar o que for necessário para desenvolver minhas habilidades.',
   action: {
-    label: 'Contact me',
-    callback: () => console.log('clicked')
+    label: 'Projetos',
+    callback: (url: string) => window.open(url, "_self")
   }
 }
 
