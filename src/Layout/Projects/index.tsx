@@ -46,7 +46,7 @@ const Projects = ({ projects } : { projects: repo[] }) => {
       }
       </ul>
       { 
-        !projects && (
+        !projects.length && (
         <div className='empty'>
           <picture className='icon'>
             <img src="/empty.png" alt="imagem abstrata que remete a construção do site" />
